@@ -121,15 +121,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(color: Colors.white),
                   )),
               _image != null
-                  ? CircleAvatar(radius: 10,
-                    child: Image.file(
+                  ? CircleAvatar(
+                      radius: 10,
+                      child: Image.file(
                         _image!,
                         height: 200,
                         width: 200,
                         fit: BoxFit.cover,
-                        
                       ),
-                  )
+                    )
                   : SizedBox(height: 10, child: Text('No image selected')),
             ],
           ),
