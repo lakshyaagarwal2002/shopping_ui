@@ -123,12 +123,11 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                       ),
                     )
-                  : SizedBox(
-                      child: Padding(
+                  : Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Text('No image selected',
                           style: TextStyle(color: Colors.white)),
-                    )),
+                    ),
             ),
             SizedBox(
               height: 30,
