@@ -97,42 +97,62 @@ class _MyHomePageState extends State<MyHomePage> {
       key: scaffoldKey,
       backgroundColor: Colors.grey[100],
       drawer: Drawer(
-        child: Padding(
-          padding: const EdgeInsets.only(top: 58.0),
-          child: Column(
-            children: [
-              InkWell(
-                  onTap: () {
-                    getImageFromCamera();
-                  },
-                  child: Text(
-                    "Upload from Camera",
-                    style: TextStyle(color: Colors.white),
-                  )),
-              SizedBox(
-                height: 30,
-              ),
-              InkWell(
-                  onTap: () {
-                    getImageFromGallery();
-                  },
-                  child: Text(
-                    "Upload from Gallery",
-                    style: TextStyle(color: Colors.white),
-                  )),
-              _image != null
-                  ? CircleAvatar(
-                      radius: 10,
-                      child: Image.file(
-                        _image!,
-                        height: 200,
-                        width: 200,
-                        fit: BoxFit.cover,
+        child: Column(
+          children: [
+            Container(
+              height: MediaQuery.sizeOf(context).height * 0.3,
+              width: MediaQuery.sizeOf(context).width,
+              color: Colors.amber,
+              child: _image != null
+                  ? Padding(
+                      padding: const EdgeInsets.only(top: 25.0, left: 20),
+                      child: Row(
+                        children: [
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(100),
+                              child: Image.file(
+                                _image!,
+                                height: 150,
+                                width: 150,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     )
-                  : SizedBox(height: 10, child: Text('No image selected')),
-            ],
-          ),
+                  : SizedBox(
+                      child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text('No image selected',
+                          style: TextStyle(color: Colors.white)),
+                    )),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            InkWell(
+                onTap: () {
+                  getImageFromCamera();
+                },
+                child: Text(
+                  "Upload from Camera",
+                  style: TextStyle(color: Colors.white),
+                )),
+            SizedBox(
+              height: 30,
+            ),
+            InkWell(
+                onTap: () {
+                  getImageFromGallery();
+                },
+                child: Text(
+                  "Upload from Gallery",
+                  style: TextStyle(color: Colors.white),
+                )),
+          ],
         ),
         backgroundColor: Colors.black,
       ),
