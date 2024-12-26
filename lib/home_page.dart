@@ -3,9 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
+import 'package:shopping_ui/add_to_cart_page.dart';
+import 'package:shopping_ui/item_model.dart';
 import 'package:shopping_ui/product_description.dart';
-import 'add_to_cart_page.dart';
-import 'item_model.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
